@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('instructor_id')->constrained()->cascadeOnDelete();
             $table->decimal('price', 6, 2);
             $table->string('image')->nullable();
+            $table->boolean('available');
             $table->timestamps();
         });
     }

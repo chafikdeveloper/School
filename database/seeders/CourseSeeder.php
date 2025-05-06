@@ -20,20 +20,23 @@ class CourseSeeder extends Seeder
                 'price' => 499,
                 'category_id' => 1,
                 'instructor_id' => 1,
+                'available' => true,
             ],
-            // [
-            //     'title' => 'Advanced JavaScript for Developers',
-            //     'description' => 'Deep dive into modern JavaScript concepts like closures, async/await, and ES modules.',
-            //     'price' => 449,
-            //     'category_id' => 1,
-            //     'instructor_id' => 1,
-            // ],
+            [
+                'title' => 'Advanced JavaScript for Developers',
+                'description' => 'Deep dive into modern JavaScript concepts like closures, async/await, and ES modules.',
+                'price' => 449,
+                'category_id' => 1,
+                'instructor_id' => 1,
+                'available' => true,
+            ],
             [
                 'title' => 'Building REST APIs with Laravel',
                 'description' => 'Learn how to create robust APIs using Laravel and best backend practices.',
                 'price' => 529,
                 'category_id' => 1,
                 'instructor_id' => 1,
+                'available' => true,
             ],
 
             // App Development (Instructor ID 2)
@@ -43,6 +46,7 @@ class CourseSeeder extends Seeder
                 'price' => 599,
                 'category_id' => 2,
                 'instructor_id' => 2,
+                'available' => true,
             ],
             // [
             //     'title' => 'React Native Bootcamp',
@@ -50,14 +54,16 @@ class CourseSeeder extends Seeder
             //     'price' => 489,
             //     'category_id' => 2,
             //     'instructor_id' => 2,
+            //     'available' => true,
             // ],
-            // [
-            //     'title' => 'iOS App Development with SwiftUI',
-            //     'description' => 'Get started with Swift and SwiftUI to build sleek, modern iOS applications.',
-            //     'price' => 599,
-            //     'category_id' => 2,
-            //     'instructor_id' => 2,
-            // ],
+            [
+                'title' => 'iOS App Development with SwiftUI',
+                'description' => 'Get started with Swift and SwiftUI to build sleek, modern iOS applications.',
+                'price' => 599,
+                'category_id' => 2,
+                'instructor_id' => 2,
+                'available' => true,
+            ],
 
             // Marketing (Instructor ID 3)
             [
@@ -66,6 +72,7 @@ class CourseSeeder extends Seeder
                 'price' => 399,
                 'category_id' => 3,
                 'instructor_id' => 3,
+                'available' => true,
             ],
             // [
             //     'title' => 'Social Media Advertising Strategy',
@@ -73,6 +80,7 @@ class CourseSeeder extends Seeder
             //     'price' => 379,
             //     'category_id' => 3,
             //     'instructor_id' => 3,
+            //     'available' => true,
             // ],
             [
                 'title' => 'Email Marketing & Automation',
@@ -80,6 +88,7 @@ class CourseSeeder extends Seeder
                 'price' => 349,
                 'category_id' => 3,
                 'instructor_id' => 3,
+                'available' => true,
             ],
 
             // Design (Instructor ID 4)
@@ -89,6 +98,7 @@ class CourseSeeder extends Seeder
                 'price' => 449,
                 'category_id' => 4,
                 'instructor_id' => 4,
+                'available' => true,
             ],
             [
                 'title' => 'Figma for Designers: From Basics to Pro',
@@ -96,6 +106,7 @@ class CourseSeeder extends Seeder
                 'price' => 399,
                 'category_id' => 4,
                 'instructor_id' => 4,
+                'available' => true,
             ],
             [
                 'title' => 'Graphic Design with Adobe Suite',
@@ -103,6 +114,7 @@ class CourseSeeder extends Seeder
                 'price' => 559,
                 'category_id' => 4,
                 'instructor_id' => 4,
+                'available' => true,
             ],
 
             // Robotics (Instructor ID 5)
@@ -112,6 +124,7 @@ class CourseSeeder extends Seeder
                 'price' => 549,
                 'category_id' => 5,
                 'instructor_id' => 5,
+                'available' => true,
             ],
             // [
             //     'title' => 'AI for Robotics: Beginner to Intermediate',
@@ -119,6 +132,7 @@ class CourseSeeder extends Seeder
             //     'price' => 599,
             //     'category_id' => 5,
             //     'instructor_id' => 5,
+            //     'available' => true,
             // ],
             [
                 'title' => 'Robotic Arm Programming with ROS',
@@ -126,10 +140,11 @@ class CourseSeeder extends Seeder
                 'price' => 699,
                 'category_id' => 5,
                 'instructor_id' => 5,
+                'available' => true,
             ],
         ];
 
-        foreach($courses as $course) {
+        foreach ($courses as $course) {
             Course::create($course);
         }
     }
