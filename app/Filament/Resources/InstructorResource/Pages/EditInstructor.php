@@ -16,4 +16,8 @@ class EditInstructor extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string {
+        return InstructorResource::getUrl('index');
+    }
 }

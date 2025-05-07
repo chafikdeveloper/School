@@ -28,6 +28,8 @@ class CourseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
+    protected static ?string $navigationGroup = "Course Management";
+
     public static function form(Form $form): Form
     {
         return $form
@@ -49,17 +51,18 @@ class CourseResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-        ->striped()
+            ->striped()
             ->columns([
                 TextColumn::make('title')->searchable()->sortable()->weight('bold'),
                 TextColumn::make('instructor.name')->sortable(),
                 TextColumn::make('category.name')->sortable()->badge()
                 ->color(fn (string $state): string => match ($state) {
                     'Web Dev' => 'blue',
-                    'App Dev' => 'warning',
-                    'Design' => 'success',
-                    'Marketing' => 'danger',
-                    'Robotic' => 'gray'
+                    'App Dev' => 'orange',
+                    'Design' => 'green',
+                    'Marketing' => 'red',
+                    'Robotic' => 'robotic',
+                    "Electronic" => 'purple'
                 }),
                 TextColumn::make('price')->money()->sortable(),
                 ToggleColumn::make('available')->toggleable(isToggledHiddenByDefault: true),
