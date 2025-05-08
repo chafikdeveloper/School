@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => env('ADMIN_PASSWORD'),
-            'role' => 'Admin'
+            'role' => 'Admin',
+            'phone' => '+971 50 543 4297'
         ]);
 
         $this->call(InstructorSeeder::class);

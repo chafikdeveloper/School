@@ -62,7 +62,7 @@ class CourseResource extends Resource
                     'App Dev' => 'orange',
                     'Design' => 'green',
                     'Marketing' => 'red',
-                    'Robotic' => 'robotic',
+                    'Robotic' => 'teal',
                     "Electronic" => 'purple'
                 }),
                 TextColumn::make('price')->money()->sortable(),

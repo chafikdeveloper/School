@@ -20,7 +20,9 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    protected static ?string $navigationGroup = "User Management";
 
     public static function form(Form $form): Form
     {
@@ -28,7 +30,8 @@ class UserResource extends Resource
             ->schema([
                 TextInput::make('name')->required(),
                 TextInput::make('email')->email()->required(),
-                TextInput::make('password')->password()->required(),
+                TextInput::make('phone')->tel()->required(),
+                TextInput::make('password')->password()->required(fn (string $context) => $context === 'create')->disabledOn('edit'),
                 Select::make('role')->options([
                     'Admin' => 'Admin',
                     'Manager' => 'Manager',
@@ -41,9 +44,14 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->weight('bold'),
+                TextColumn::make('name')->weight('bold')->searchable()->sortable(),
                 TextColumn::make('email'),
-                TextColumn::make('role')->badge(),
+                TextColumn::make('phone'),
+                TextColumn::make('role')->badge()->color(fn (string $state): string => match ($state) {
+                    'Admin' => 'blue',
+                    'Manager' => 'purple',
+                    'Instructor' => 'green',
+                })->sortable()
             ])
             ->filters([
                 //
