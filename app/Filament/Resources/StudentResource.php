@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\StudentResource\Pages;
 use App\Filament\Resources\StudentResource\RelationManagers;
+use App\Filament\Resources\StudentResource\RelationManagers\CoursesRelationManager;
 use App\Models\Student;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
@@ -48,7 +49,7 @@ class StudentResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()->color('blue'),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -61,7 +62,7 @@ class StudentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CoursesRelationManager::class,
         ];
     }
 

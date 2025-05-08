@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CourseResource\Pages;
 use App\Filament\Resources\CourseResource\RelationManagers;
+use App\Filament\Resources\CourseResource\RelationManagers\StudentsRelationManager;
 use App\Models\Course;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -72,7 +73,7 @@ class CourseResource extends Resource
                 SelectFilter::make('instructor_id')->relationship('instructor', 'name')->searchable()->preload(),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()->color('blue'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
@@ -86,7 +87,7 @@ class CourseResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            StudentsRelationManager::class,
         ];
     }
 
