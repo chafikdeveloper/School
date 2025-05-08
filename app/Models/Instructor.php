@@ -9,7 +9,7 @@ class Instructor extends Model
 {
     protected $fillable = ['name', 'email', 'phone', 'profession', 'bio', 'image'];
 
-    public function course() {
+    public function courses() {
         return $this->hasMany(Course::class);
     }
 }

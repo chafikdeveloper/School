@@ -8,7 +8,7 @@ class Student extends Model
 {
     protected $fillable = ['name', 'email', 'phone'];
 
-    public function course() {
+    public function courses() {
         return $this->hasMany(Course::class);
     }
 }

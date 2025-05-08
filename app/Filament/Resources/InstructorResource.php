@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\InstructorResource\Pages;
+use App\Filament\Resources\InstructorResource\RelationManagers\CoursesRelationManager;
 use App\Models\Instructor;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -69,7 +70,7 @@ class InstructorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CoursesRelationManager::class,
         ];
     }
 
