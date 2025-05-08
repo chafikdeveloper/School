@@ -35,7 +35,8 @@ class UserResource extends Resource
                 Select::make('role')->options([
                     'Admin' => 'Admin',
                     'Manager' => 'Manager',
-                    'Instructor' => 'Instructor'
+                    'Instructor' => 'Instructor',
+                    'User' => 'User'
                 ])->required(),
             ]);
     }
@@ -51,6 +52,7 @@ class UserResource extends Resource
                     'Admin' => 'blue',
                     'Manager' => 'purple',
                     'Instructor' => 'green',
+                    'User' => 'gray'
                 })->sortable()
             ])
             ->filters([
