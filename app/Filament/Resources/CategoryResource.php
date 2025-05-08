@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers\CoursesRelationManager;
 use App\Models\Category;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -53,7 +54,7 @@ class CategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CoursesRelationManager::class,
         ];
     }
 
