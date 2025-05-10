@@ -8,7 +8,7 @@ class Student extends Model
 {
     protected $fillable = ['name', 'email', 'phone'];
 
-    public function courses() {
-        return $this->belongsToMany(Course::class)->withTimestamps();
+    public function sessions() {
+        return $this->belongsToMany(Session::class)->withTimestamps();
     }
 }
