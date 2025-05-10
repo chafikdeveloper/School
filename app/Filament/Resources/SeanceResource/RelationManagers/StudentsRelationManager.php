@@ -1,15 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\CourseResource\RelationManagers;
+namespace App\Filament\Resources\SeanceResource\RelationManagers;
 
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class StudentsRelationManager extends RelationManager
 {
@@ -26,12 +22,9 @@ class StudentsRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->striped()
             ->recordTitleAttribute('name')
             ->columns([
-                TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('email')->searchable(),
-                TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('name'),
             ])
             ->filters([
                 //
@@ -45,9 +38,9 @@ class StudentsRelationManager extends RelationManager
                 // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                // Tables\Actions\BulkActionGroup::make([
-                //     Tables\Actions\DeleteBulkAction::make(),
-                // ]),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 }

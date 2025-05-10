@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\SeanceResource\Pages;
 use App\Filament\Resources\SeanceResource\RelationManagers;
+use App\Filament\Resources\SeanceResource\RelationManagers\StudentsRelationManager;
 use App\Models\Seance;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
@@ -25,6 +26,10 @@ class SeanceResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     protected static ?string $navigationLabel = 'Sessions';
+
+    protected static ?string $slug = 'sessions';
+
+    protected static ?string $modelLabel = 'Sessions';
 
     public static function form(Form $form): Form
     {
@@ -69,7 +74,7 @@ class SeanceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            StudentsRelationManager::class,
         ];
     }
 
